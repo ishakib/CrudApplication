@@ -1,0 +1,83 @@
+
+<!DOCTYPE html>
+<html ng-app="example">
+<head>
+  <meta charset="utf-8" />
+  <title>AngularJS CRUD Example</title>
+  
+
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    
+
+  <script>
+    document.write('<base href="' + document.location + '" />');
+  </script>
+  
+  <script src="https://code.angularjs.org/1.5.8/angular.js"></script>
+  <script src="demo.js"></script>
+</head>
+
+
+<body ng-controller="MainCtrl as main">
+  <div class="container">
+    
+    <div class="row">
+    
+    <div class="row" >
+      <table class="table table-bordered table-striped table-condensed">
+        <thead>
+          <tr>
+            <th>Title</th>
+            <th>Description</th>
+            <th>Date</th>
+            <th>Option</th>
+          </tr>
+
+          <tr >   
+            <td><input type="text" ng-model="main.person.title " /></td>
+            <td><input type="text" ng-model="main.person.description " /></td>
+            <td><input type="Date" id="dob" ng-model="main.person.dob " /></td>
+            <td>
+                <button class="btn btn-success" ng-click="main.addClickHandler()">Create</button>
+                <button class="btn btn-primary" ng-click="main.resetClickHandler()">Reset</button>
+            </td>  
+
+         </tr>   
+
+
+        </thead>
+        <tbody ng-show="main.addresses">
+         
+          <tr ng-repeat="item in main.addresses">
+            <td ng-bind="item.title"></td>
+            <td ng-bind="item.description"></td>
+            <td ng-bind="item.dob"></td>
+            <td>
+              <a href="#" class="btn btn-success" ng-click="main.addClickHandler(item)">
+                <span class="glyphicon glyphicon-ok"></span>
+              </a>
+
+              <a href="#" class="btn btn-primary " ng-click="main.editClickHandler(item)">
+                <span class="glyphicon glyphicon-pencil"></span> 
+              </a>
+
+              <a href="#" class="btn btn-danger " ng-click="main.removeClickHandler(item)">
+                <span class="glyphicon glyphicon-trash"></span>
+              </a>
+
+              
+            </td>
+       	  </tr>
+       	
+
+        </tbody>
+      </table>
+    </div>	
+
+    
+  </div>
+
+
+
+</body>
+</html>

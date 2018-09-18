@@ -1,2 +1,2 @@
-# CrudApplication
-Angualar Js , Bootstrap, CodeIgniter
+# Basic Intro CrudApplication
+Angualar Js , Bootstrap
